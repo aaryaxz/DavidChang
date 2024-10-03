@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+#back{
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgb(255, 0, 0); */
+    overflow: hidden;
+}
+#back img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+#top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 100;
+}
+
+#workingArea{
+    position: relative;
+    width: 80%;
+    max-width: 1920px;
+    height: 100vh;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5vw 0;
+}
+#nleft,#nright{
+    display: flex;
+    align-items: center;
+    gap: 3.7vw;
+}
+nav img{
+    height: 50px;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    pointer-events: all;
+}
+#hero{
+    /* background-color: gray; */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%,-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vw;
+}
+#hero #heroleft{
+    /* position: relative; */
+    min-width: 50%;
+}
+#heroleft .elem{
+    position: relative;
+    height: 9.5vw;
+    overflow: hidden;
+}
+#heroleft .elem h1{
+    
+    font-family: "Kajiro";
+    color: white;
+    font-weight: 200;
+    font-size: 12vw;
+    line-height: 0.9;
+}
+.elem #line{
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 13vw;
+    background-color: white;
+}
+#heroleft button{
+    background-color: white;
+    font-size: 3.3vw;
+    font-family: "Kajiro";
+    padding: .3vw 3.4vw;
+    padding-top: .5vw;
+    margin-top: 3vw;
+    border: none;
+    outline: none;
+    letter-spacing: .3vw;
+    pointer-events: all;
+    cursor: pointer;
+
+}
+#hero #heroright{
+    /* background-color: green; */
+    width:20%;
+
+    
+}
+#heroright #imagediv{
+    background-color: white;
+    width: 100%;
+    height: 22vh;
+    margin-top: 1.5vw;
+    margin-bottom: 2.5vw;
+}
+#heroright p{
+    text-align: right;
+    /* background-color: #706f6f; */
+    font-size: 13px;
+    color: white;
+    font-weight: 300;
+}
+
+#heroright p:nth-child(4){
+    margin-top: 5vw;
+}
