@@ -89,15 +89,22 @@ nav a{
 #heroleft .elem{
     position: relative;
     height: 9.5vw;
+    /* border: 2px solid #000000; */
     overflow: hidden;
 }
 #heroleft .elem h1{
-    
+    /* background-color: rgb(79, 79, 71); */
+    position: absolute;
+    top: 100%;
+    left: 0;
     font-family: "Kajiro";
     color: white;
     font-weight: 200;
     font-size: 12vw;
     line-height: 0.9;
+}
+#heroleft .elem h1:first-child{
+    top: 0%;
 }
 .elem #line{
     position: absolute;
