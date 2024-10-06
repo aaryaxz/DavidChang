@@ -3,8 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: gilroy;
-
-}
+    -webkit-tap-highlight-color: transparent;
+}   
 
 html,
 body {
@@ -12,25 +12,29 @@ body {
     height: 100%;
 }
 
-#main{
+
+#main {
     position: relative;
     width: 100%;
     height: 100vh;
+    touch-action: manipulation;
 }
-#back{
+
+#back {
     width: 100%;
     height: 100vh;
     /* background-color: rgb(255, 0, 0); */
     overflow: hidden;
 }
-#back img{
+
+#back img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
+
 }
 
-#top{
+#top {
     position: absolute;
     top: 0;
     left: 0;
@@ -41,7 +45,7 @@ body {
     z-index: 100;
 }
 
-#workingArea{
+#workingArea {
     position: relative;
     width: 80%;
     max-width: 1920px;
@@ -49,50 +53,63 @@ body {
     margin: 0 auto;
     /* border: 1px solid red; */
 }
-nav{
-    display:flex;
+
+nav {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2.5vw 0;
 }
-#nleft,#nright{
+
+#nleft,
+#nright {
     display: flex;
     align-items: center;
     gap: 3.7vw;
 }
-nav img{
+
+nav img {
     height: 50px;
 }
-nav a{
+
+nav a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 13px;
+    font-size: clamp(12px, 0.9vw, 13px);
     pointer-events: all;
 }
-#hero{
+nav #menu{
+    display: none;
+}
+
+#hero {
     /* background-color: gray; */
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 3vw;
 }
-#hero #heroleft{
+
+#hero #heroleft {
     /* position: relative; */
     min-width: 50%;
 }
-#heroleft .elem{
+
+#heroleft .elem {
     position: relative;
     height: 9.5vw;
     /* border: 2px solid #000000; */
     overflow: hidden;
+    touch-action: manipulation;
 }
-#heroleft .elem h1{
+
+#heroleft .elem h1 {
     /* background-color: rgb(79, 79, 71); */
     position: absolute;
     top: 100%;
@@ -100,21 +117,24 @@ nav a{
     font-family: "Kajiro";
     color: white;
     font-weight: 200;
-    font-size: 12vw;
+    font-size: clamp(150px, 12vw, 300px);
     line-height: 0.9;
 }
-#heroleft .elem h1:first-child{
+
+#heroleft .elem h1:first-child {
     top: 0%;
-    
+
 }
-.elem #line{
+
+.elem #line {
     position: absolute;
     top: 50%;
     height: 1px;
     width: 13vw;
     background-color: white;
 }
-#heroleft button{
+
+#heroleft button {
     background-color: white;
     font-size: 3.3vw;
     font-family: "Kajiro";
@@ -128,15 +148,15 @@ nav a{
     cursor: pointer;
 
 }
-#hero #heroright{
-    /* background-color: green; */
-    width:20%;
 
-    
+#hero #heroright {
+    /* background-color: green; */
+    width: 20%;
 }
-#heroright #imagediv{
+
+#heroright #imagediv {
     background-color: white;
-    background: url("Assets/Images/Model6.jpg") ;
+    background: url("Assets/Images/Model6.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -145,14 +165,170 @@ nav a{
     margin-top: 1.5vw;
     margin-bottom: 2.5vw;
 }
-#heroright p{
+
+#heroright p {
     text-align: right;
-    /* background-color: #706f6f; */
-    font-size: 13px;
+    font-size: 0.9vw;
     color: white;
     font-weight: 300;
 }
 
-#heroright p:nth-child(4){
+#heroright p:nth-child(4) {
     margin-top: 5vw;
+}
+
+@media (max-width:1200px) {
+    #hero {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-top: 0vw;
+        transform: translate(0, 0);
+
+    }
+
+    #hero #heroright {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #heroright #imagediv {
+        width: 50%;
+    }
+
+    #heroright p {
+        line-height: 1.2;
+        width: 70%;
+    }
+}
+
+@media (max-width:900px) {
+    #workingArea {
+        width: 90%;
+    }
+    #hero {
+        display: flex;
+        flex-direction: column;
+    }
+    #heroleft{
+        margin-top: 3vw;
+    }
+    #heroleft .elem {
+        height: 15vw;
+    }
+
+    #heroleft button {
+        font-size: 4vw;
+        padding: 1vw 3.8vw;
+        padding-top: 1vw;
+        margin-top: 3vw;
+        letter-spacing: .5vw;
+    
+    }
+    #hero #heroleft {
+        width: 100%;
+        height: fit-content;
+    }
+
+    #hero #heroright {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 50%;
+    }
+    #heroright #imagediv {
+        width: 80%;
+    }
+    #heroright p {
+        font-size: 2vw;
+        mix-blend-mode: difference;
+    }
+}
+
+@media (max-width:500px) {
+    #main{
+        overflow-y: hidden;
+    }
+    #workingArea {
+        width: 90%;
+    }
+    nav a{
+        display: none;
+    }
+    nav #menu{
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: relative;
+    }
+
+    #menu .menuIcon-line {
+        background-color: rgb(255, 255, 255);
+        height: 1.5px;
+        width: 100%;
+        position: absolute;
+        top: 20%;
+    }
+    #menu .menuIcon-line2{
+        margin-top: 7px;
+    }
+
+    #hero {
+        display: flex;
+        flex-direction: column;
+    }
+    #heroleft{
+        margin-top: 3vw;
+    }
+    #heroleft .elem {
+        height: 19vw;
+    }
+    .elem #line {
+        width: 90px;
+        height: 1px;
+    }
+    #heroleft .elem h1 {
+        font-size: 100px;
+    }
+    #heroleft button {
+        font-size: 30px;
+        padding: 0.8vw 4vw;
+        padding-top: 1.2vw;
+        margin-top: 3vw;
+        letter-spacing: .7vw;
+    }
+    
+    #hero #heroright {
+        position:relative;
+    
+        align-items: start;
+        /* background-color: green; */
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 50vw;
+    }
+    #heroright #imagediv {
+        display: none;
+    }
+    #heroright p {
+        font-size: 14px;
+        text-align: start;
+
+        width: 60%;
+        
+    }
+    #heroright p:first-child{
+        margin-top: 20vw;
+        margin-bottom: 2vw;
+        color: rgb(255, 230, 0);
+    }
+}
+
+@media (max-width:400px) {
+    #heroleft .elem {
+        height: 23vw;
+    }
+
 }
